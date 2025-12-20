@@ -1,0 +1,1 @@
+/home/alexmrtr/.config/omarchy/current/theme/neovim.lua
