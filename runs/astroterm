@@ -1,4 +1,0 @@
-sudo pacman -S astroterm
-
-echo 'alias astro="astroterm -i \"Curitiba\" -c -u -C -t 4.8 -l 1.0 -f 60 -s 25 -r 2.0 -m"' >> ~/.bashrc
-

@@ -1,6 +1,0 @@
-yay -S iio-hyprland-git
-
-LINE="exec-once = iio-hyprland"
-HYPR_CONF="$HOME/.config/hypr/hyprland.conf"
-
-grep -Fxq "$LINE" "$HYPR_CONF" || echo "$LINE" >> "$HYPR_CONF"

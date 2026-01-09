@@ -1,1 +1,4 @@
+# Tmux
+# a terminal multiplexer
+
 yay -S tmux

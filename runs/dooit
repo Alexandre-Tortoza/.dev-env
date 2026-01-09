@@ -1,0 +1,6 @@
+# Dooit
+# An awesome TUI todo manager
+
+yay -S dooit dooit-extras
+
+

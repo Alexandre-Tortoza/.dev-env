@@ -1,0 +1,4 @@
+# Superfile
+# Pretty fancy and modern terminal file manager
+
+bash -c "$(curl -sLo- https://superfile.dev/install.sh)"
