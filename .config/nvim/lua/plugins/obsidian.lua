@@ -219,12 +219,12 @@ return {
     )
     vim.api.nvim_create_user_command(
       "ObsidianLeetCode",
-      create_note_in_folder("03-resource/leetcode", "leetcode-problem.md"),
+      create_note_in_folder("03-resource/leet-code", "leetcode-problem.md"),
       {}
     )
     vim.api.nvim_create_user_command(
       "ObsidianCodeWars",
-      create_note_in_folder("03-resource/codewars", "code-wars.md"),
+      create_note_in_folder("03-resource/code-wars", "code-wars.md"),
       {}
     )
 
@@ -254,14 +254,14 @@ return {
     -- Comando para buscar por pasta específica
     vim.api.nvim_create_user_command("ObsidianSearchFolder", function()
       local folders = {
-        { name = "Projetos", path = "01-project" },
-        { name = "Áreas", path = "02-area" },
-        { name = "Recursos", path = "03-resource" },
-        { name = "Arquivo", path = "04-archive" },
-        { name = "Fleeting", path = "05-fleeting" },
+        { name = "Projetos",   path = "01-project" },
+        { name = "Áreas",      path = "02-area" },
+        { name = "Recursos",   path = "03-resource" },
+        { name = "Arquivo",    path = "04-archive" },
+        { name = "Fleeting",   path = "05-fleeting" },
         { name = "Literatura", path = "06-literature" },
-        { name = "Permanent", path = "07-permanent" },
-        { name = "Diário", path = "08-daily" },
+        { name = "Permanent",  path = "07-permanent" },
+        { name = "Diário",     path = "08-daily" },
       }
       local names = vim.tbl_map(function(f)
         return f.name
@@ -279,49 +279,50 @@ return {
 
   keys = {
     -- Menu principal
-    { "<leader>O", "", desc = "+Obsidian" },
+    { "<leader>O",   "",                                    desc = "+Obsidian" },
 
     -- Navegação básica (novos comandos: Obsidian xxx)
-    { "<leader>Oo", "<cmd>Obsidian quick_switch<cr>", desc = "Abrir nota" },
-    { "<leader>Os", "<cmd>Obsidian search<cr>", desc = "Buscar conteúdo" },
-    { "<leader>OS", "<cmd>ObsidianSearchFolder<cr>", desc = "Buscar por pasta" },
-    { "<leader>Of", "<cmd>Obsidian follow_link<cr>", desc = "Seguir link" },
-    { "<leader>Ob", "<cmd>Obsidian backlinks<cr>", desc = "Backlinks" },
-    { "<leader>Ol", "<cmd>Obsidian links<cr>", desc = "Links da nota" },
-    { "<leader>OT", "<cmd>Obsidian tags<cr>", desc = "Buscar por tags" },
+    { "<leader>Oo",  "<cmd>Obsidian quick_switch<cr>",      desc = "Abrir nota" },
+    { "<leader>Os",  "<cmd>Obsidian search<cr>",            desc = "Buscar conteúdo" },
+    { "<leader>OS",  "<cmd>ObsidianSearchFolder<cr>",       desc = "Buscar por pasta" },
+    { "<leader>Of",  "<cmd>Obsidian follow_link<cr>",       desc = "Seguir link" },
+    { "<leader>Ob",  "<cmd>Obsidian backlinks<cr>",         desc = "Backlinks" },
+    { "<leader>Ol",  "<cmd>Obsidian links<cr>",             desc = "Links da nota" },
+    { "<leader>OT",  "<cmd>Obsidian tags<cr>",              desc = "Buscar por tags" },
 
     -- Notas diárias
-    { "<leader>Od", "<cmd>Obsidian today<cr>", desc = "Hoje" },
-    { "<leader>Oy", "<cmd>Obsidian yesterday<cr>", desc = "Ontem" },
-    { "<leader>Ot", "<cmd>Obsidian tomorrow<cr>", desc = "Amanhã" },
-    { "<leader>OD", "<cmd>Obsidian dailies<cr>", desc = "Lista de diários" },
+    { "<leader>Od",  "<cmd>Obsidian today<cr>",             desc = "Hoje" },
+    { "<leader>Oy",  "<cmd>Obsidian yesterday<cr>",         desc = "Ontem" },
+    { "<leader>Ot",  "<cmd>Obsidian tomorrow<cr>",          desc = "Amanhã" },
+    { "<leader>OD",  "<cmd>Obsidian dailies<cr>",           desc = "Lista de diários" },
 
     -- Criar notas (submenu n)
-    { "<leader>On", "", desc = "+Nova nota" },
-    { "<leader>Onn", "<cmd>Obsidian new<cr>", desc = "Nova (fleeting)" },
-    { "<leader>Onp", "<cmd>ObsidianProject<cr>", desc = "Novo projeto" },
-    { "<leader>Ona", "<cmd>ObsidianAlgorithm<cr>", desc = "Novo algoritmo" },
-    { "<leader>Onl", "<cmd>ObsidianLeetCode<cr>", desc = "Novo LeetCode" },
-    { "<leader>Onc", "<cmd>ObsidianCodeWars<cr>", desc = "Novo CodeWars" },
-    { "<leader>OnL", "<cmd>ObsidianLiterature<cr>", desc = "Nova literatura" },
-    { "<leader>OnP", "<cmd>ObsidianPermanent<cr>", desc = "Nova permanente" },
+    { "<leader>On",  "",                                    desc = "+Nova nota" },
+    { "<leader>Onn", "<cmd>Obsidian new<cr>",               desc = "Nova (fleeting)" },
+    { "<leader>Onp", "<cmd>ObsidianProject<cr>",            desc = "Novo projeto" },
+    { "<leader>Ona", "<cmd>ObsidianAlgorithm<cr>",          desc = "Novo algoritmo" },
+    { "<leader>Onl", "<cmd>ObsidianLeetCode<cr>",           desc = "Novo LeetCode" },
+    { "<leader>Onc", "<cmd>ObsidianCodeWars<cr>",           desc = "Novo CodeWars" },
+    { "<leader>OnL", "<cmd>ObsidianLiterature<cr>",         desc = "Nova literatura" },
+    { "<leader>OnP", "<cmd>ObsidianPermanent<cr>",          desc = "Nova permanente" },
     { "<leader>Ont", "<cmd>Obsidian new_from_template<cr>", desc = "Nova de template" },
 
     -- Templates e edição
-    { "<leader>Oe", "<cmd>Obsidian template<cr>", desc = "Inserir template" },
-    { "<leader>Oc", "<cmd>Obsidian toggle_checkbox<cr>", desc = "Toggle checkbox" },
-    { "<leader>Op", "<cmd>Obsidian paste_img<cr>", desc = "Colar imagem" },
-    { "<leader>Or", "<cmd>Obsidian rename<cr>", desc = "Renomear nota" },
-    { "<leader>Om", "<cmd>ObsidianMoveTo<cr>", desc = "Mover para pasta" },
-    { "<leader>Oi", "<cmd>Obsidian toc<cr>", desc = "Índice (TOC)" },
+    { "<leader>Oe",  "<cmd>Obsidian template<cr>",          desc = "Inserir template" },
+    { "<leader>Oc",  "<cmd>Obsidian toggle_checkbox<cr>",   desc = "Toggle checkbox" },
+    { "<leader>Op",  "<cmd>Obsidian paste_img<cr>",         desc = "Colar imagem" },
+    { "<leader>Or",  "<cmd>Obsidian rename<cr>",            desc = "Renomear nota" },
+    { "<leader>Om",  "<cmd>ObsidianMoveTo<cr>",             desc = "Mover para pasta" },
+    { "<leader>Oi",  "<cmd>Obsidian toc<cr>",               desc = "Índice (TOC)" },
 
     -- Visual mode
-    { "<leader>Ox", "<cmd>Obsidian extract_note<cr>", desc = "Extrair para nota", mode = "v" },
-    { "<leader>OL", "<cmd>Obsidian link_new<cr>", desc = "Link para nova nota", mode = "v" },
-    { "<leader>Ol", "<cmd>Obsidian link<cr>", desc = "Link para nota", mode = "v" },
+    { "<leader>Ox",  "<cmd>Obsidian extract_note<cr>",      desc = "Extrair para nota",    mode = "v" },
+    { "<leader>OL",  "<cmd>Obsidian link_new<cr>",          desc = "Link para nova nota",  mode = "v" },
+    { "<leader>Ol",  "<cmd>Obsidian link<cr>",              desc = "Link para nota",       mode = "v" },
 
     -- Workspace e app
-    { "<leader>Ow", "<cmd>Obsidian workspace<cr>", desc = "Trocar workspace" },
-    { "<leader>Oa", "<cmd>Obsidian open<cr>", desc = "Abrir no Obsidian app" },
+    { "<leader>Ow",  "<cmd>Obsidian workspace<cr>",         desc = "Trocar workspace" },
+    { "<leader>Oa",  "<cmd>Obsidian open<cr>",              desc = "Abrir no Obsidian app" },
   },
 }
+
